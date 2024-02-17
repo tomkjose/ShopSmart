@@ -1,0 +1,25 @@
+.login {
+  width: 100%;
+  margin: 1rem 3 rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login__title {
+  font-size: 2rem;
+  font-weight: 800;
+  padding: 1.4rem 0;
+}
+
+.signup__link {
+  padding: 1rem;
+}
+
+.signup__link span {
+  cursor: pointer;
+}
+
+.signup__link span:hover {
+  color: #0690ec;
+}

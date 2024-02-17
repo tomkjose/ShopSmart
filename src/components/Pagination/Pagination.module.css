@@ -1,0 +1,12 @@
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.pagination__number {
+  padding: 1rem;
+  border: 1px solid;
+  cursor: pointer;
+}

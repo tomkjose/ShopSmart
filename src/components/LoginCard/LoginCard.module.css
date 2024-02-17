@@ -1,0 +1,54 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  gap: 1rem;
+}
+
+.form__input {
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid gray;
+}
+
+.form__btn {
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #1d9bf0;
+  border: 1px solid #1d9bf0;
+  color: white;
+  cursor: pointer;
+}
+
+.form__btn:hover {
+  background-color: #0690ec;
+}
+
+.form__forgetpassword {
+  text-align: center;
+  width: 100%;
+  padding: 0 0 0.6rem 0;
+  cursor: pointer;
+}
+
+.form__forgetpassword:hover {
+  color: #0690ec;
+}
+
+@media only screen and (max-width: 1200px) {
+  .form {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .form {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .form {
+    width: 90%;
+  }
+}
