@@ -5,7 +5,8 @@ export const USER_LOGOUT = "USER_LOGOUT";
 
 export const ADD_TO_CART = "ADD_TO_CART";
 export const DELETE_FROM_CART = "DELETE_FROM_CART";
-export const UPDATE_CART = "UPDATE_CART";
+export const INCREMENT_PRODUCT = "INCREMENT_PRODUCT";
+export const DECREMENT_PRODUCT = "DECREMENT_PRODUCT";
 
 export const fetchLoginRequest = () => {
   return {
@@ -41,9 +42,16 @@ export const removeFromCart = (id) => {
   };
 };
 
-export const updateCart = (id) => {
+export const incrementProduct = (id) => {
   return {
-    type: DELETE_FROM_CART,
+    type: INCREMENT_PRODUCT,
+    payload: id,
+  };
+};
+
+export const decrementProduct = (id) => {
+  return {
+    type: DECREMENT_PRODUCT,
     payload: id,
   };
 };

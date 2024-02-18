@@ -1,0 +1,151 @@
+.cart {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 3rem;
+  width: 100%;
+}
+
+.cart__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cart__card {
+  display: flex;
+  width: 100%;
+  padding: 2rem;
+  margin: 1rem 0;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.item__title {
+  padding: 0.6rem 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  display: flex;
+  align-items: flex-start;
+  text-overflow: ellipsis;
+}
+
+.item__price {
+  padding: 0.6rem 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.item__details {
+  width: 73%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 0 1rem;
+}
+
+.item__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart__btns {
+  display: flex;
+  align-items: center;
+}
+
+.item__image {
+  width: 30%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  border: none;
+}
+
+.item__count__btn {
+  padding: 1rem;
+  border-radius: 0.4rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.item__count {
+  font-weight: 800;
+  margin: 0 1rem;
+}
+
+.item__delete,
+.checkout__cart {
+  width: 10rem;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+  margin: 0 1rem;
+  margin: 1rem 0;
+  background-color: #1d9bf0;
+  color: white;
+}
+
+.cart__price__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 2rem;
+}
+
+.delivery__price {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+}
+
+.cart__price__title {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 1rem 0;
+}
+
+.empty__cart {
+  text-align: center;
+  font-size: 10rem;
+  font-weight: 900;
+  color: lightblue;
+  opacity: 0.5;
+  height: 100vh;
+}
+
+@media only screen and (max-width: 1200px) {
+}
+
+@media only screen and (max-width: 958px) {
+  .empty__cart {
+    font-size: 6rem;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .cart__card {
+    flex-direction: column;
+  }
+
+  .item__image {
+    width: 100%;
+  }
+
+  .item__details {
+    width: 100%;
+    margin: 1rem 0;
+  }
+}
+
+@media only screen and (max-width: 579px) {
+  .cart__card {
+    flex-direction: column;
+  }
+  .empty__cart {
+    font-size: 4rem;
+  }
+}

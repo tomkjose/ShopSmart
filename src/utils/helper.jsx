@@ -7,3 +7,11 @@ export const lowestPrice = (products) => {
   const newProductList = [...products].sort((a, b) => b.price - a.price);
   return newProductList;
 };
+
+export const totalPrice = (cart) => {
+  const total = cart.reduce(
+    (finalCost, item) => finalCost + item.price * item.count,
+    0
+  );
+  return total;
+};

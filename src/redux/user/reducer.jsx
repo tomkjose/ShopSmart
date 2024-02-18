@@ -1,9 +1,11 @@
 import {
   ADD_TO_CART,
+  DECREMENT_PRODUCT,
   DELETE_FROM_CART,
   FETCH_LOGIN_ERROR,
   FETCH_LOGIN_REQUEST,
   FETCH_LOGIN_SUCCESS,
+  INCREMENT_PRODUCT,
   USER_LOGOUT,
 } from "./action";
 
@@ -44,6 +46,26 @@ export const userReducer = (state = initialValue, action) => {
         cart: state.cart.filter((product) => product.id !== action.payload),
       };
 
+    case INCREMENT_PRODUCT:
+      console.log("action.payload", action.payload);
+      return {
+        ...state,
+        cart: state.cart.map((product) =>
+          product.id === action.payload
+            ? { ...product, count: product.count + 1 }
+            : product
+        ),
+      };
+
+    case DECREMENT_PRODUCT:
+      return {
+        ...state,
+        cart: state.cart.map((product) =>
+          product.id === action.payload && product.count > 1
+            ? { ...product, count: product.count - 1 }
+            : product
+        ),
+      };
     case USER_LOGOUT:
       return {
         ...state,
