@@ -62,7 +62,7 @@ function Home() {
     setCurrentProducts(newProductList);
     setCurrentPage(pageNo);
   };
-  console.log("cart", cart);
+  // console.log("cart", cart);
   const handleAddToCart = (product) => {
     localStorage.setItem(
       "cart",

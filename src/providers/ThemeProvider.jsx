@@ -3,8 +3,12 @@ import { createContext, useContext, useState } from "react";
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [currentTheme, setCurrentTheme] = useState(false);
+  const [currentTheme, setCurrentTheme] = useState(
+    JSON.parse(localStorage.getItem("theme")) || false
+  );
   const changeTheme = () => {
+    console.log("currentTheme", !currentTheme);
+    localStorage.setItem("theme", !currentTheme);
     setCurrentTheme(!currentTheme);
   };
   const theme = {

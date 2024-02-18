@@ -72,7 +72,12 @@ function Navbar() {
             </button>
           </>
         ) : (
-          ""
+          <button
+            className={styles.nav__logout}
+            onClick={() => navigate("/login")}
+          >
+            Login
+          </button>
         )}
       </div>
     </nav>
