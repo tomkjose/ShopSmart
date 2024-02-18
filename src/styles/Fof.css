@@ -1,0 +1,27 @@
+.fof {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.fof__title {
+  text-align: center;
+  font-size: 10rem;
+  font-weight: 900;
+  color: lightblue;
+  opacity: 0.5;
+}
+
+.fof__btn {
+  padding: 1rem;
+  background-color: #1d9bf0;
+  color: white;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+
+.fof__btn:hover {
+  background-color: #0483d7;
+}

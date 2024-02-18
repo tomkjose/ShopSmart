@@ -2,6 +2,23 @@
   padding: 1rem 3rem;
 }
 
+.product__controller {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+  margin: 1.6rem 0;
+}
+
+.product__search {
+  width: 48%;
+  padding: 1rem;
+}
+
+.product__filter {
+  width: 48%;
+}
+
 .product__container {
   display: flex;
   flex-wrap: wrap;
@@ -93,6 +110,10 @@
 @media only screen and (max-width: 800px) {
   .home {
     padding: 1rem 1.4rem;
+  }
+
+  .product__controller {
+    margin: 1rem 0;
   }
 }
 

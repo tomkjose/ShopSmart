@@ -12,6 +12,8 @@ import {
 import { fetchProducts } from "../api";
 import Pagination from "../components/Pagination/Pagination";
 import { addToCart } from "../redux/user/action";
+import { highestPrice, lowestPrice } from "../utils/helper";
+import Filter from "../components/Filter/Filter";
 
 function Home() {
   const user = useSelector((state) => state.user.user);
@@ -21,12 +23,12 @@ function Home() {
   const [currentProducts, setCurrentProducts] = useState([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   // console.log("currentProducts", currentProducts);
   const numberOfItems = products?.length;
   const itemsPerPage = 6;
   const [currentPage, setCurrentPage] = useState(1);
-  const lastIndex = currentPage * itemsPerPage;
-  const firstIndex = lastIndex - itemsPerPage;
+
   useEffect(() => {
     if (Object.keys(user).length === 0) {
       navigate("/");
@@ -59,16 +61,53 @@ function Home() {
     setCurrentProducts(newProductList);
     setCurrentPage(pageNo);
   };
-
+  console.log("cart", cart);
   const handleAddToCart = (product) => {
-    localStorage.setItem("cart", JSON.stringify([...cart, product]));
-    dispatch(addToCart(product));
+    localStorage.setItem(
+      "cart",
+      JSON.stringify([...cart, { ...product, count: 1 }])
+    );
+    const newProduct = { ...product, count: 1 };
+    dispatch(addToCart(newProduct));
   };
 
-  console.log("cart", cart);
+  const handleSearch = (e) => {
+    const searchText = e.target.value.trim();
+    if (e.target.value === "") {
+      setCurrentProducts(products.slice(0, itemsPerPage));
+    } else {
+      const newProductList = products.filter((product) =>
+        product.title.toLowerCase().includes(searchText.toLowerCase())
+      );
+      setCurrentProducts(newProductList);
+    }
+  };
+
+  const handleFilter = (filterValue) => {
+    const priceFilter = filterValue;
+    if (priceFilter === "") {
+      setCurrentProducts(products.slice(0, itemsPerPage));
+    } else if (priceFilter === "lowest") {
+      setCurrentProducts(highestPrice(products));
+    } else {
+      setCurrentProducts(lowestPrice(products));
+    }
+  };
 
   return (
     <div className="home">
+      <div className="product__controller">
+        <input
+          type="text"
+          name="search"
+          onChange={handleSearch}
+          placeholder="Search..."
+          className="product__search"
+        />
+        <div className="product__filter">
+          <Filter handleFilter={handleFilter} />
+        </div>
+      </div>
       <div className="product__container">
         {currentProducts
           ? currentProducts.map((product) => {

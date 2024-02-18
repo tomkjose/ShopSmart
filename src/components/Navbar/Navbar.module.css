@@ -40,6 +40,10 @@
   cursor: pointer;
 }
 
+.nav__logout:hover {
+  background-color: #0483d7;
+}
+
 .nav__avatar {
   width: 2.6rem;
   border-radius: 100%;
