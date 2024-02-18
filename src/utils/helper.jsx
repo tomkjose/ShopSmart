@@ -15,3 +15,7 @@ export const totalPrice = (cart) => {
   );
   return total;
 };
+
+export const priceFormat = (amount) => {
+  return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};

@@ -1,7 +1,7 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 3rem;
+  padding: 0.4rem 3rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   align-items: center;
 }
@@ -34,7 +34,7 @@
 }
 
 .nav__logout {
-  padding: 1rem;
+  padding: 0.6rem;
   background-color: #1d9bf0;
   color: white;
   border: none;

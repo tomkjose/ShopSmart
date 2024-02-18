@@ -8,7 +8,7 @@ import {
 } from "../redux/user/action";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGhost } from "@fortawesome/free-solid-svg-icons";
-import { totalPrice } from "../utils/helper";
+import { priceFormat, totalPrice } from "../utils/helper";
 
 function Cart() {
   const cart = useSelector((state) => state.user.cart);
@@ -44,7 +44,7 @@ function Cart() {
             <div className="item__details">
               <div className="item__info">
                 <span className="item__title">{item.title}</span>
-                <div>$ {item.price}</div>
+                <div className="cart__price">$ {priceFormat(item.price)}</div>
               </div>
               <div className="cart__btns">
                 <button
@@ -82,7 +82,9 @@ function Cart() {
               </div>
               <div className="delivery__price">
                 <div>Total Amount</div>
-                <div>$ {totalPrice(cart)}</div>
+                <div className="cart__price">
+                  $ {priceFormat(totalPrice(cart))}
+                </div>
               </div>
               <button className="checkout__cart">Checkout</button>
             </div>
@@ -90,7 +92,6 @@ function Cart() {
         </div>
       ) : (
         <div className="empty__cart">
-          {" "}
           <FontAwesomeIcon
             icon={faGhost}
             size="sm"

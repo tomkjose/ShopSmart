@@ -12,8 +12,9 @@ import {
 import { fetchProducts } from "../api";
 import Pagination from "../components/Pagination/Pagination";
 import { addToCart } from "../redux/user/action";
-import { highestPrice, lowestPrice } from "../utils/helper";
+import { highestPrice, lowestPrice, priceFormat } from "../utils/helper";
 import Filter from "../components/Filter/Filter";
+import Loading from "../components/Loading/Loading";
 
 function Home() {
   const user = useSelector((state) => state.user.user);
@@ -94,6 +95,10 @@ function Home() {
     }
   };
 
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <div className="home">
       <div className="product__controller">
@@ -120,7 +125,10 @@ function Home() {
                   />
                   <div className="product__menu">
                     <div className="product__title">{product.title}</div>
-                    <div className="product__price"> $ {product.price}</div>
+                    <div className="product__price">
+                      {" "}
+                      $ {priceFormat(product.price)}
+                    </div>
                   </div>
                   <div className="product__category">{product.category}</div>
                   <div className="product__menu">

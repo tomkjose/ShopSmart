@@ -141,6 +141,11 @@
   }
 }
 
+.cart__price {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
 @media only screen and (max-width: 579px) {
   .cart__card {
     flex-direction: column;

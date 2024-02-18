@@ -23,7 +23,18 @@ function Navbar() {
   };
   return (
     <nav className={styles.navbar}>
-      <div className={styles.nav__brand}>E-Cart</div>
+      <Link to="/home">
+        <div
+          className={styles.nav__brand}
+          style={{
+            cursor: "pointer",
+            color: currentTheme ? "white" : "black",
+            textDecoration: "none",
+          }}
+        >
+          E-Cart
+        </div>
+      </Link>
       <div className={styles.nav__menu}>
         <FontAwesomeIcon
           icon={currentTheme ? faSun : faMoon}
