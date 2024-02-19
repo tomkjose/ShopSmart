@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./LoginCard.module.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   fetchLoginError,
   fetchLoginRequest,
@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 function LoginCard() {
   const [username, setUsername] = useState("kminchelle");
   const [password, setPassword] = useState("");
-  const user = useSelector((state) => state.user.user);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleFormSubmit = async (e) => {
