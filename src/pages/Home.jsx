@@ -31,10 +31,10 @@ function Home() {
   const numberOfItems = products?.length;
   const itemsPerPage = 6;
   const [currentPage, setCurrentPage] = useState(1);
-
   useEffect(() => {
-    if (Object.keys(user)?.length === 0) {
-      navigate("/");
+    console.log("user", user);
+    if (!user || Object.keys(user).length === 0) {
+      navigate("/login");
     }
   }, [user, navigate]);
 

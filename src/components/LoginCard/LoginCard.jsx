@@ -9,7 +9,7 @@ import {
 import { fetchUser } from "../../api";
 import { useNavigate } from "react-router-dom";
 function LoginCard() {
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState("kminchelle");
   const [password, setPassword] = useState("");
   const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
@@ -19,9 +19,15 @@ function LoginCard() {
     dispatch(fetchLoginRequest());
     try {
       const userData = await fetchUser(username, password);
-      localStorage.setItem("user", JSON.stringify(userData));
       dispatch(fetchLoginSuccess(userData));
-      navigate("/home");
+      userData
+        ? localStorage.setItem("user", JSON.stringify(userData))
+        : localStorage.setItem("user", JSON.stringify({}));
+      if (userData !== undefined) {
+        navigate("/home");
+      } else {
+        navigate("/login");
+      }
       setUsername("");
       setPassword("");
     } catch (error) {

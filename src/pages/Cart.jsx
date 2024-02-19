@@ -9,13 +9,22 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGhost } from "@fortawesome/free-solid-svg-icons";
 import { priceFormat, productTotalPrice, totalPrice } from "../utils/helper";
+import { useNavigate } from "react-router-dom";
 
 function Cart() {
   const cart = useSelector((state) => state.user.cart);
+  const user = useSelector((state) => state.user.user);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
+
+  useEffect(() => {
+    if (!user || Object.keys(user).length === 0) {
+      navigate("/home");
+    }
+  }, [user, navigate]);
 
   const handleCartDelete = (id) => {
     localStorage.setItem("cart", JSON.stringify(cart));

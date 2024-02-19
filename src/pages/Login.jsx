@@ -7,7 +7,7 @@ function Login() {
   const user = useSelector((state) => state.user.user);
   const navigate = useNavigate();
   useEffect(() => {
-    if (Object.keys(user).length !== 0) {
+    if (user ? Object.keys(user).length !== 0 : user) {
       navigate("/home");
     }
   }, [user, navigate]);
