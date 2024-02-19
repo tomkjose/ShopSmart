@@ -23,7 +23,7 @@ function Navbar() {
   };
   return (
     <nav className={styles.navbar}>
-      <Link to="/home">
+      <Link to="/">
         <div
           className={styles.nav__brand}
           style={{
