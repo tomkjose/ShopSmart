@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 function LoginCard() {
   const [username, setUsername] = useState("kminchelle");
   const [password, setPassword] = useState("0lelplR");
-
+  const [error, setError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleFormSubmit = async (e) => {
@@ -19,6 +19,9 @@ function LoginCard() {
     dispatch(fetchLoginRequest());
     try {
       const userData = await fetchUser(username, password);
+      if (!userData) {
+        setError("Invalid username / password");
+      }
       dispatch(fetchLoginSuccess(userData));
       userData
         ? localStorage.setItem("user", JSON.stringify(userData))
@@ -55,6 +58,7 @@ function LoginCard() {
       <button type="submit" className={styles.form__btn}>
         Login
       </button>
+      <div className={styles.error}>{error}</div>
       <div className={styles.form__forgetpassword}>
         Forgotten your password?
       </div>

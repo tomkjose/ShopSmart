@@ -32,7 +32,7 @@ function Home() {
   const itemsPerPage = 6;
   const [currentPage, setCurrentPage] = useState(1);
   useEffect(() => {
-    console.log("user", user);
+    // console.log("user", user);
     if (!user || Object.keys(user).length === 0) {
       navigate("/login");
     }
