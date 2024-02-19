@@ -7,7 +7,7 @@ function Landing() {
   // console.log("user", user);
   const navigate = useNavigate();
   useEffect(() => {
-    if (!user || Object.keys(user).length === 0) {
+    if (user || Object.keys(user).length !== 0) {
       navigate("/home");
     }
   }, [user, navigate]);
