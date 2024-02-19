@@ -19,3 +19,8 @@ export const totalPrice = (cart) => {
 export const priceFormat = (amount) => {
   return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
+
+export const productTotalPrice = (item) => {
+  const total = item.count * item.price;
+  return total;
+};

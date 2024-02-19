@@ -32,7 +32,7 @@ function Navbar() {
             textDecoration: "none",
           }}
         >
-          E-Cart
+          ShopSmart
         </div>
       </Link>
       <div className={styles.nav__menu}>
@@ -66,7 +66,13 @@ function Navbar() {
                 )}
               </div>
             </Link>
-            <img src={user.image} alt="avatar" className={styles.nav__avatar} />
+            <img
+              src={user.image}
+              alt="avatar"
+              className={styles.nav__avatar}
+              title={user.email}
+              style={{ cursor: "pointer" }}
+            />
             <button className={styles.nav__logout} onClick={handleLogout}>
               Logout
             </button>
