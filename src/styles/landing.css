@@ -1,9 +1,9 @@
 .landing {
   display: flex;
-  padding: 1rem 3rem;
+  padding: 1rem 3rem 0 3rem;
   justify-content: space-between;
-  width: 100%;
   height: 100vh;
+  width: 100%;
   align-items: center;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .landing__image {
-  width: 45%;
+  width: 35%;
 }
 
 .landing__title {
@@ -25,7 +25,7 @@
 }
 
 .landing__description {
-  font-size: 1.4rem;
+  font-size: 1rem;
 }
 
 .landing__btn {
@@ -61,7 +61,7 @@
   .landing__title {
     font-weight: 800;
     font-size: 2.3rem;
-    padding: 1.74rem 0;
+    padding: 1rem 0;
     color: #0690ec;
   }
 
@@ -71,4 +71,7 @@
 }
 
 @media only screen and (max-width: 500px) {
+  .landing {
+    height: 100%;
+  }
 }
