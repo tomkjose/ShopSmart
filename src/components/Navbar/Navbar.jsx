@@ -57,9 +57,9 @@ function Navbar() {
                     textDecoration: "none",
                   }}
                 />
-                {cart.length > 0 && cart.length <= 9 ? (
-                  <div className={styles.cart__count}>{cart.length}</div>
-                ) : cart.length > 9 ? (
+                {cart?.length > 0 && cart?.length <= 9 ? (
+                  <div className={styles.cart__count}>{cart?.length}</div>
+                ) : cart?.length > 9 ? (
                   <div className={styles.cart__count}>9+</div>
                 ) : (
                   ""

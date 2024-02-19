@@ -4,10 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 import "../styles/landing.css";
 function Landing() {
   const user = useSelector((state) => state.user.user);
-  console.log("user", user);
+  // console.log("user", user);
   const navigate = useNavigate();
   useEffect(() => {
-    if (user.length) {
+    if (Object.keys(user).length !== 0) {
       navigate("/home");
     }
   }, [user, navigate]);

@@ -31,13 +31,13 @@ function Home() {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    if (Object.keys(user).length === 0) {
+    if (Object.keys(user)?.length === 0) {
       navigate("/");
     }
   }, [user, navigate]);
 
   useEffect(() => {
-    if (products && products.length > 0) {
+    if (products && products?.length > 0) {
       setCurrentProducts(products.slice(0, itemsPerPage));
     }
   }, [products]);
