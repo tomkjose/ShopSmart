@@ -118,6 +118,9 @@ function Home() {
       <div className="product__container">
         {currentProducts
           ? currentProducts.map((product) => {
+              const isProductInCart = cart.some(
+                (item) => item.id === product.id
+              );
               return (
                 <div key={product.id} className="product__card">
                   <img
@@ -145,20 +148,37 @@ function Home() {
                       />{" "}
                       <span> {product.rating}/5</span>
                     </div>
-                    <button
-                      className="cart__btn"
-                      onClick={() => handleAddToCart(product)}
-                    >
-                      {" "}
-                      <FontAwesomeIcon
-                        icon={faBucket}
-                        size="xl"
-                        style={{
-                          cursor: "pointer",
-                        }}
-                      />{" "}
-                      Add To Cart
-                    </button>
+                    {isProductInCart ? (
+                      <button
+                        className="cart__btn"
+                        onClick={() => handleAddToCart(product)}
+                      >
+                        {" "}
+                        <FontAwesomeIcon
+                          icon={faBucket}
+                          size="xl"
+                          style={{
+                            cursor: "pointer",
+                          }}
+                        />{" "}
+                        Add To Cart
+                      </button>
+                    ) : (
+                      <button
+                        className="cart__btn"
+                        onClick={() => navigate("/cart")}
+                      >
+                        {" "}
+                        <FontAwesomeIcon
+                          icon={faBucket}
+                          size="xl"
+                          style={{
+                            cursor: "pointer",
+                          }}
+                        />{" "}
+                        Go To Cart
+                      </button>
+                    )}
                   </div>
                 </div>
               );

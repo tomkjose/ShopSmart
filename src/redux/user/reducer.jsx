@@ -50,7 +50,6 @@ export const userReducer = (state = initialValue, action) => {
       };
 
     case INCREMENT_PRODUCT:
-      console.log("action.payload", action.payload);
       return {
         ...state,
         cart: state.cart.map((product) =>

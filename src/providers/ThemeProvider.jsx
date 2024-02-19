@@ -7,7 +7,6 @@ export const ThemeProvider = ({ children }) => {
     JSON.parse(localStorage.getItem("theme")) || false
   );
   const changeTheme = () => {
-    console.log("currentTheme", !currentTheme);
     localStorage.setItem("theme", !currentTheme);
     setCurrentTheme(!currentTheme);
   };
