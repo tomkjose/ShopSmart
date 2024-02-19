@@ -10,7 +10,7 @@ import { fetchUser } from "../../api";
 import { useNavigate } from "react-router-dom";
 function LoginCard() {
   const [username, setUsername] = useState("kminchelle");
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("0lelplR");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -28,8 +28,6 @@ function LoginCard() {
       } else {
         navigate("/login");
       }
-      setUsername("");
-      setPassword("");
     } catch (error) {
       dispatch(fetchLoginError(error.message));
     }
@@ -41,6 +39,7 @@ function LoginCard() {
         name="username"
         onChange={(e) => setUsername(e.target.value)}
         required
+        value={username}
         placeholder="username"
         className={styles.form__input}
       />
@@ -49,6 +48,7 @@ function LoginCard() {
         name="password"
         onChange={(e) => setPassword(e.target.value)}
         required
+        value={password}
         placeholder="password"
         className={styles.form__input}
       />
