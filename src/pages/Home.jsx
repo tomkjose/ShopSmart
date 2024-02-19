@@ -19,12 +19,14 @@ import Loading from "../components/Loading/Loading";
 function Home() {
   const user = useSelector((state) => state.user.user);
   const cart = useSelector((state) => state.user.cart);
+
   const products = useSelector((state) => state.products.products[0]);
   const loading = useSelector((state) => state.products.loading);
   const [currentProducts, setCurrentProducts] = useState([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // console.log("cart", cart);
   // console.log("currentProducts", currentProducts);
   const numberOfItems = products?.length;
   const itemsPerPage = 6;

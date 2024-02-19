@@ -13,7 +13,9 @@ const initialValue = {
   user: JSON.parse(localStorage.getItem("user")) || {},
   loading: false,
   error: null,
-  cart: JSON.parse(localStorage.getItem("cart")) || [],
+  cart: JSON.parse(localStorage.getItem("cart"))
+    ? JSON.parse(localStorage.getItem("cart"))
+    : [],
 };
 
 export const userReducer = (state = initialValue, action) => {
@@ -26,6 +28,7 @@ export const userReducer = (state = initialValue, action) => {
       };
     case FETCH_LOGIN_SUCCESS:
       return {
+        ...state,
         loading: false,
         error: null,
         user: action.payload,
