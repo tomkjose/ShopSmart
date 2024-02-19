@@ -23,7 +23,7 @@ export const fetchLoginSuccess = (userDetails) => {
 
 export const fetchLoginError = (error) => {
   return {
-    type: FETCH_LOGIN_SUCCESS,
+    type: FETCH_LOGIN_ERROR,
     payload: error,
   };
 };

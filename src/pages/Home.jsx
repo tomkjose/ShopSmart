@@ -151,21 +151,6 @@ function Home() {
                     {isProductInCart ? (
                       <button
                         className="cart__btn"
-                        onClick={() => handleAddToCart(product)}
-                      >
-                        {" "}
-                        <FontAwesomeIcon
-                          icon={faBucket}
-                          size="xl"
-                          style={{
-                            cursor: "pointer",
-                          }}
-                        />{" "}
-                        Add To Cart
-                      </button>
-                    ) : (
-                      <button
-                        className="cart__btn"
                         onClick={() => navigate("/cart")}
                       >
                         {" "}
@@ -177,6 +162,21 @@ function Home() {
                           }}
                         />{" "}
                         Go To Cart
+                      </button>
+                    ) : (
+                      <button
+                        className="cart__btn"
+                        onClick={() => handleAddToCart(product)}
+                      >
+                        {" "}
+                        <FontAwesomeIcon
+                          icon={faBucket}
+                          size="xl"
+                          style={{
+                            cursor: "pointer",
+                          }}
+                        />{" "}
+                        Add To Cart
                       </button>
                     )}
                   </div>

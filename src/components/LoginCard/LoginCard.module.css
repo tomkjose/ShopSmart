@@ -24,6 +24,10 @@
   background-color: #0690ec;
 }
 
+.error {
+  color: red;
+}
+
 .form__forgetpassword {
   text-align: center;
   width: 100%;
