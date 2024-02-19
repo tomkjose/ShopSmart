@@ -23,7 +23,6 @@ function Cart() {
   };
 
   const handleIncrementProduct = (id) => {
-    console.log("id", id);
     dispatch(incrementProduct(id));
   };
 

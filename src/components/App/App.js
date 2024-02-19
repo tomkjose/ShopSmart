@@ -3,6 +3,7 @@ import { Home, Landing, Login, Cart, Fof } from "../../pages/Index";
 import Navbar from "../Navbar/Navbar";
 import "./App.css";
 import { useTheme } from "../../providers/ThemeProvider";
+import Footer from "../Footer/Footer";
 function App() {
   const { currentTheme } = useTheme();
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/cart" element={<Cart />}></Route>
           <Route path="*" element={<Fof />}></Route>
         </Routes>
+        <Footer />
       </Router>
     </div>
   );
